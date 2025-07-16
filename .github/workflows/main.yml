@@ -5,12 +5,17 @@ jobs:
     name: Deploy
     runs-on: ubuntu-latest
     steps:
-    - name: Get latest code
-      uses: actions/checkout@v4
+      - name: Get latest code
+        uses: actions/checkout@v4
 
-    - name: LFTP rsync check     #synchronizace na FTP skrze LFTP klient
-      run:  |
-        sudo apt update && apt install -y lftp
-        lftp -u "jakubjenik_cz","tempotegola" "ftp.jakubjenik.cz" <<EOF
-        set ssl:verify-certificate no
-        mirror -R --only-newer −−dereference −−continue --delete −−verbose=3 --parallel=10 --exclude .git --exclude .github --exclude .README.md ./ jakubjenik.cz
+      - name: Install LFTP
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y lftp
+
+      - name: LFTP rsync check
+        run: |
+          lftp -u "jakubjenik_cz","tempotegola" "ftp.jakubjenik.cz" <<EOF
+          set ssl:verify-certificate no
+          mirror -R --only-newer --dereference --continue --delete --verbose=3 --parallel=10 --exclude .git --exclude .github --exclude .README.md ./ jakubjenik.cz
+          EOF
