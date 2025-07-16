@@ -8,14 +8,26 @@ jobs:
       - name: Get latest code
         uses: actions/checkout@v4
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build project
+        run: npm run build
+
       - name: Install LFTP
         run: |
           sudo apt-get update
           sudo apt-get install -y lftp
 
-      - name: LFTP rsync check
+      - name: Deploy via LFTP
         run: |
-          lftp -u "jakubjenik_cz","tempotegola" "ftp.jakubjenik.cz" <<EOF
+          lftp -u "${{ secrets.FTP_USER }},${{ secrets.FTP_PASS }}" "ftp.jakubjenik.cz" <<EOF
           set ssl:verify-certificate no
-          mirror -R --only-newer --dereference --continue --delete --verbose=3 --parallel=10 --exclude .git --exclude .github --exclude .README.md ./ jakubjenik.cz
+          mirror -R --only-newer --dereference --continue --delete --verbose=3 --parallel=10 \
+          ./dist jakubjenik.cz
           EOF
