@@ -16,10 +16,8 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build and Export Next.js
-        run: |
-          npm run build
-          npm run export
+      - name: Build Next.js static site
+        run: npm run build
 
       - name: Install LFTP
         run: |
