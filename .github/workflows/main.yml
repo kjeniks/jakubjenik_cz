@@ -26,7 +26,7 @@ jobs:
 
       - name: Deploy via LFTP
         run: |
-          lftp -u "${{ secrets.FTP_USER }},${{ secrets.FTP_PASS }}" "ftp.jakubjenik.cz" <<EOF
+          lftp -u "jakubjenik_cz,tempotegola" "ftp.jakubjenik.cz" <<EOF
           set ssl:verify-certificate no
           mirror -R --only-newer --dereference --continue --delete --verbose=3 --parallel=10 \
           ./out jakubjenik.cz
