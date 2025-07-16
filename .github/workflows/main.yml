@@ -30,4 +30,4 @@ jobs:
           set ssl:verify-certificate no
           mirror -R --only-newer --dereference --continue --delete --verbose=3 --parallel=10 \
           ./out jakubjenik.cz
-EOF
+          EOF
