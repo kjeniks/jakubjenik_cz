@@ -1,20 +1,11 @@
 import Layout from "../components/Layout";
+import { useLanguage } from "./_app";
+import { translations } from "../locales";
 
 export default function Home() {
-  const topics = [
-    "Cypress from Zero to Hero",
-    "Playwright Advanced Techniques",
-    "Effective QA Strategy Design",
-    "CI/CD Integration for Test Automation",
-    "Monitoring E2E Tests with Grafana",
-    "Mentoring QA Engineers 1:1",
-  ];
-
-  const courses = [
-    { name: "Cypress Basics", date: "2025-08-12", location: "Online" },
-    { name: "QA Strategy Bootcamp", date: "2025-09-03", location: "Prague" },
-    { name: "Playwright in Practice", date: "2025-10-15", location: "Online" },
-  ];
+  const { language, isHydrated } = useLanguage();
+  if (!isHydrated) return null;
+  const t = translations[language];
 
   return (
     <Layout>
@@ -22,23 +13,21 @@ export default function Home() {
         <div className="container mx-auto px-6 flex flex-col md:flex-row items-center gap-10">
           <div className="flex-1 text-center md:text-left">
             <h1 className="text-4xl md:text-5xl font-bold mb-4 text-slate-900">
-              QA Automation Expert & Mentor
+              {t.heroTitle}
             </h1>
-            <p className="text-lg mb-6 text-slate-600">
-              Helping teams deliver better software with advanced test automation, QA strategy, and mentoring.
-            </p>
+            <p className="text-lg mb-6 text-slate-600">{t.heroDesc}</p>
             <div className="flex space-x-4 justify-center md:justify-start">
               <a
                 href="#contact"
                 className="bg-[#8B5E3C] hover:bg-[#734d31] text-white font-semibold px-6 py-3 rounded-xl shadow"
               >
-                Book a Call
+                {t.bookCall}
               </a>
               <a
                 href="#services"
                 className="bg-[#E63946] hover:bg-[#c5303b] text-white font-semibold px-6 py-3 rounded-xl shadow"
               >
-                See Services
+                {t.seeServices}
               </a>
             </div>
           </div>
@@ -55,33 +44,32 @@ export default function Home() {
       <section className="py-16 bg-[#F9F9F9]" id="about">
         <div className="container mx-auto px-6 flex flex-col md:flex-row items-center gap-10">
           <div className="flex-1 text-center md:text-left">
-            <h2 className="text-3xl font-bold mb-4 text-slate-900">About Me</h2>
-            <p className="text-lg text-slate-600 mb-4">
-              With years of experience in QA automation and testing strategy, I help businesses improve
-              their software quality, reduce release cycles, and implement efficient automation solutions.
-            </p>
-            <p className="text-lg text-slate-600">
-              I also provide mentoring and workshops to help QA engineers and teams upgrade their skills.
-            </p>
+            <h2 className="text-3xl font-bold mb-4 text-slate-900">
+              {t.aboutTitle}
+            </h2>
+            <p className="text-lg text-slate-600 mb-4">{t.about1}</p>
+            <p className="text-lg text-slate-600">{t.about2}</p>
           </div>
           <div className="flex-1 text-center">
-           
+            {/* Optionally add an about image here */}
           </div>
         </div>
       </section>
 
       <section className="py-16 bg-white" id="services">
         <div className="container mx-auto px-6 text-center">
-          <h2 className="text-3xl font-bold mb-10 text-slate-900">What I Offer</h2>
+          <h2 className="text-3xl font-bold mb-10 text-slate-900">
+            {t.offerTitle}
+          </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              { title: "Test Automation", desc: "Custom Cypress & Playwright solutions tailored to your needs." },
-              { title: "QA Strategy", desc: "Designing scalable, maintainable testing strategies." },
-              { title: "Mentorship", desc: "1:1 guidance for QA beginners and professionals." },
-              { title: "Workshops", desc: "Hands-on training and bootcamps for teams or individuals." },
-            ].map((s) => (
-              <div key={s.title} className="bg-[#F9F9F9] p-6 rounded-xl shadow hover:shadow-lg transition">
-                <h3 className="text-xl font-semibold mb-2 text-[#8B5E3C]">{s.title}</h3>
+            {t.offer.map((s: any) => (
+              <div
+                key={s.title}
+                className="bg-[#F9F9F9] p-6 rounded-xl shadow hover:shadow-lg transition"
+              >
+                <h3 className="text-xl font-semibold mb-2 text-[#8B5E3C]">
+                  {s.title}
+                </h3>
                 <p className="text-slate-600">{s.desc}</p>
               </div>
             ))}
@@ -91,9 +79,11 @@ export default function Home() {
 
       <section className="py-16 bg-[#F9F9F9]" id="topics">
         <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold mb-6 text-slate-900 text-center">Topics & Consulting Areas</h2>
+          <h2 className="text-3xl font-bold mb-6 text-slate-900 text-center">
+            {t.topicsTitle}
+          </h2>
           <ul className="list-disc list-inside text-slate-700 text-lg max-w-2xl mx-auto space-y-2">
-            {topics.map((topic) => (
+            {t.topics.map((topic: string) => (
               <li key={topic}>{topic}</li>
             ))}
           </ul>
@@ -102,17 +92,21 @@ export default function Home() {
 
       <section className="py-16 bg-white" id="courses">
         <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold mb-6 text-slate-900 text-center">Upcoming Courses</h2>
+          <h2 className="text-3xl font-bold mb-6 text-slate-900 text-center">
+            {t.coursesTitle}
+          </h2>
           <table className="table-auto mx-auto text-left text-slate-700 text-lg">
             <thead>
               <tr>
-                <th className="px-4 py-2">Course</th>
-                <th className="px-4 py-2">Date</th>
-                <th className="px-4 py-2">Location</th>
+                {t.courseHeaders.map((h: string) => (
+                  <th key={h} className="px-4 py-2">
+                    {h}
+                  </th>
+                ))}
               </tr>
             </thead>
             <tbody>
-              {courses.map((c) => (
+              {t.courses.map((c: any) => (
                 <tr key={c.name}>
                   <td className="px-4 py-2">{c.name}</td>
                   <td className="px-4 py-2">{c.date}</td>
@@ -124,13 +118,16 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-[#8B5E3C] text-white py-12 text-center" id="contact">
-        <h2 className="text-2xl font-bold mb-4">Ready to transform your QA?</h2>
+      <section
+        className="bg-[#8B5E3C] text-white py-12 text-center"
+        id="contact"
+      >
+        <h2 className="text-2xl font-bold mb-4">{t.contactTitle}</h2>
         <a
           href="mailto:kjeniks@gmail.com"
           className="inline-block bg-[#E63946] hover:bg-[#c5303b] text-white font-semibold px-8 py-3 rounded-xl shadow"
         >
-          Let’s Talk
+          {t.contactBtn}
         </a>
       </section>
     </Layout>

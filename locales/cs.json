@@ -1,0 +1,60 @@
+{
+  "heroTitle": "QA Automation Expert & Mentor",
+  "heroDesc": "Pomáhám týmům dodávat lepší software pomocí pokročilé automatizace testů, QA strategie a mentoringu.",
+  "bookCall": "Rezervovat konzultaci",
+  "seeServices": "Zobrazit služby",
+  "aboutTitle": "O mně",
+  "about1": "S mnohaletou zkušeností v oblasti QA automatizace a testovací strategie pomáhám firmám zlepšovat kvalitu softwaru, zkracovat release cykly a zavádět efektivní automatizovaná řešení.",
+  "about2": "Poskytuji také mentoring a workshopy pro rozvoj QA inženýrů a týmů.",
+  "offerTitle": "Co nabízím",
+  "offer": [
+    {
+      "title": "Testovací automatizace",
+      "desc": "Vlastní řešení Cypress & Playwright na míru vašim potřebám."
+    },
+    {
+      "title": "QA Strategie",
+      "desc": "Návrh škálovatelných a udržitelných testovacích strategií."
+    },
+    {
+      "title": "Mentoring",
+      "desc": "Individuální vedení pro začátečníky i pokročilé QA specialisty."
+    },
+    {
+      "title": "Workshopy",
+      "desc": "Praktická školení a bootcampy pro týmy i jednotlivce."
+    }
+  ],
+  "topicsTitle": "Témata & konzultační oblasti",
+  "topics": [
+    "Cypress od začátku po experta",
+    "Pokročilé techniky Playwright",
+    "Efektivní návrh QA strategie",
+    "Integrace CI/CD pro testovací automatizaci",
+    "Monitoring E2E testů pomocí Grafany",
+    "Mentoring QA inženýrů 1:1"
+  ],
+  "coursesTitle": "Nadcházející kurzy",
+  "courseHeaders": ["Kurz", "Datum", "Místo"],
+  "courses": [
+    { "name": "Základy Cypress", "date": "2025-08-12", "location": "Online" },
+    {
+      "name": "QA Strategie Bootcamp",
+      "date": "2025-09-03",
+      "location": "Praha"
+    },
+    { "name": "Playwright v praxi", "date": "2025-10-15", "location": "Online" }
+  ],
+  "contactTitle": "Připraveni posunout vaše QA?",
+  "contactBtn": "Ozvěte se",
+  "header": {
+    "about": "O mně",
+    "services": "Služby",
+    "topics": "Témata",
+    "courses": "Kurzy",
+    "contact": "Kontakt",
+    "title": "QA Expert Jakub Jenik",
+    "switch": "EN"
+  },
+  "footer": "Všechna práva vyhrazena."
+}

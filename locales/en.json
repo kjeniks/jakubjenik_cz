@@ -1,0 +1,64 @@
+{
+  "heroTitle": "QA Automation Expert & Mentor",
+  "heroDesc": "Helping teams deliver better software with advanced test automation, QA strategy, and mentoring.",
+  "bookCall": "Book a Call",
+  "seeServices": "See Services",
+  "aboutTitle": "About Me",
+  "about1": "With years of experience in QA automation and testing strategy, I help businesses improve their software quality, reduce release cycles, and implement efficient automation solutions.",
+  "about2": "I also provide mentoring and workshops to help QA engineers and teams upgrade their skills.",
+  "offerTitle": "What I Offer",
+  "offer": [
+    {
+      "title": "Test Automation",
+      "desc": "Custom Cypress & Playwright solutions tailored to your needs."
+    },
+    {
+      "title": "QA Strategy",
+      "desc": "Designing scalable, maintainable testing strategies."
+    },
+    {
+      "title": "Mentorship",
+      "desc": "1:1 guidance for QA beginners and professionals."
+    },
+    {
+      "title": "Workshops",
+      "desc": "Hands-on training and bootcamps for teams or individuals."
+    }
+  ],
+  "topicsTitle": "Topics & Consulting Areas",
+  "topics": [
+    "Cypress from Zero to Hero",
+    "Playwright Advanced Techniques",
+    "Effective QA Strategy Design",
+    "CI/CD Integration for Test Automation",
+    "Monitoring E2E Tests with Grafana",
+    "Mentoring QA Engineers 1:1"
+  ],
+  "coursesTitle": "Upcoming Courses",
+  "courseHeaders": ["Course", "Date", "Location"],
+  "courses": [
+    { "name": "Cypress Basics", "date": "2025-08-12", "location": "Online" },
+    {
+      "name": "QA Strategy Bootcamp",
+      "date": "2025-09-03",
+      "location": "Prague"
+    },
+    {
+      "name": "Playwright in Practice",
+      "date": "2025-10-15",
+      "location": "Online"
+    }
+  ],
+  "contactTitle": "Ready to transform your QA?",
+  "contactBtn": "Let’s Talk",
+  "header": {
+    "about": "About",
+    "services": "Services",
+    "topics": "Topics",
+    "courses": "Courses",
+    "contact": "Contact",
+    "title": "QA Expert Jakub Jenik",
+    "switch": "CZ"
+  },
+  "footer": "All rights reserved."
+}
